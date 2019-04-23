@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PXFVJC6');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L&I Dashboards</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/phila-standards@0.11.2/dist/css/phila-app.min.css">
+  <link rel="shortcut icon" type="image/x-icon" href="https://standards.phila.gov/img/favicon.png"> <meta name="twitter:card" content="summary">
+  {% block assets %}{% endblock %}
+<meta property="og:title" content=""> 
+<meta property="og:description" content=""> 
+<meta property="og:type" content="website">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="Digital Standards | City of Philadelphia">
+<meta property="og:image" content="https://beta.phila.gov/media/20160715133810/phila-gov.jpg">
+
+</head>
+
+<body lang="en">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXFVJC6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <div id="application">
+  <!-- Begin header -->
+  <nav class="navbar">
+    <p>City of Philadelphia | L&I Dashboards</p>
+    <div class="dropdown">
+      <button class="dropbtn">Miscellaneous</button>
+      <div class="dropdown-content">
+        <a href="/misc/uninspected-service-requests">Uninspected Service Requests</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Cases & Violations</button>
+      <div class="dropdown-content">
+        <a href="/cases-violations/unsafes/open-cases">Open Unsafe Cases</a>
+        <a href="/cases-violations/imminently-dangerous/open-cases">Open Imminently Dangerous Cases</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Permits</button>
+      <div class="dropdown-content">
+        <a href="/permits/volume-and-revenues">Volumes and Revenues</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Business Licenses</button>
+      <div class="dropdown-content">
+        <a href="/bl/issued">Issued Licenses</a>
+        <a href="/bl/submission-mode">Submission Mode</a>
+        <a href="/bl/expiring-licenses">Expiring Licenses</a>
+        <a href="/bl/incomplete-processes">Incomplete Processes</a>
+        <a href="/bl/overdue-inspections">Overdue Inspections</a>
+      </div>
+    </div>
+  </nav>
+  <main id="main">
+    <noscript>
+      <div class="flash"> 
+      <strong>Your browser does not have JavaScript enabled. Please enable JavaScript for this site to work properly.</strong>
+      </div>
+    </noscript>
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+  </main>
+    <div class="app-footer anchor">
+    <footer>
+      <div class="row expanded">
+        <div class="columns">
+          <nav>
+            <ul class="inline-list">
+              <li>
+                <a href="mailto:ligisteam@phila.gov">Contact L&I GIS Team</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+<!-- #application -->
+
+</body>
+
+</html>
