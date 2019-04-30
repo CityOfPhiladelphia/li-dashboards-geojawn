@@ -5,7 +5,7 @@ from li_metabase.auth import auth
 
 
 MISC_DASHBOARDS = [
-    Dashboard('Uninspected Service Requests', 'uninspected-service-requests', 77)
+    Dashboard('Service Requests', 'service-requests', 158)
 ]
 
 bp = Blueprint('misc', __name__)
@@ -22,9 +22,3 @@ def misc(dashboard_url):
 @bp.errorhandler(DashboardNotFound)
 def handle_error(error):
     return render_template('error.html')
-
-#Redirect old versions of URLs to new versions
-@bp.route('/misc/unispected-service-requests')
-@auth.login_required
-def uninspected_service_requests():
-    return redirect("/misc/uninspected-service-requests", code=301)
