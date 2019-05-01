@@ -5,7 +5,7 @@ from li_metabase.auth import auth
 
 
 IMM_DANG_DASHBOARDS = [
-    Dashboard('Open Cases', 'open-cases', 153)
+    Dashboard('Properties', 'properties', 159)
 ]
 
 bp = Blueprint('imminently_dangerous', __name__)
