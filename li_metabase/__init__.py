@@ -9,7 +9,7 @@ from li_metabase.views import (
 from li_metabase.utils import build_iframe_url
 
 
-INDEX_PAGE_DASHBOARD_ID = 34
+INDEX_PAGE_DASHBOARD_ID = 158
 
 def create_app():
     app = Flask(__name__)
